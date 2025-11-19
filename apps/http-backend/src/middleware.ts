@@ -12,6 +12,6 @@ export function middleware(req: Request, res: Response, next: NextFunction) {
     const decoded = jwt.verify(token, JWT_SECRET);
 
     // TypeScript fix: augment request type to allow 'user'
-    (req as any).user = decoded;
+    (req as any).user = (decoded as any).userid;
     next();
 }
