@@ -3,11 +3,19 @@ import { middleware } from './middleware';
 import jwt from 'jsonwebtoken';
 // import { JWT_SECRET } from './config';
 import { JWT_SECRET } from '@repo/backend-common/config';
+import {CreateUserSchema} from "@repo/common/types";
+
 
 const app = express();
 
 app.post('/signup', (req, res) => {
-    const { username, password } = req.body;
+   const data = CreateUserSchema.safeParse(req.body);
+
+   if(!data.success){
+        return res.json({
+            message: "incorrect inputs"
+        })
+   }
 })
 
 app.post('/signin', (req, res) => {
