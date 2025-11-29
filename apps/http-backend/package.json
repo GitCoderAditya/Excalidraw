@@ -3,16 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -b",
+    "start": "node dist/index.js",
+    "dev": "pnpm run build && pnpm run start"
   },
- 
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/express": "^5.0.5",
+    "@types/jsonwebtoken": "^9.0.10",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "@repo/typescript-config": "workspace:*"
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@repo/backend-common": "workspace:*"
   }
 }

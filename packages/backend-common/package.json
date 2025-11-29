@@ -5,15 +5,16 @@
   "exports": {
     "./config": "./src/index.ts"
   },
-  "scripts": {
-   
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/node": "^22.15.3"
-    
+    "@types/node": "^22.15.3",
+    "@repo/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "@repo/typescript-config": "workspace:*"
   }
 }
